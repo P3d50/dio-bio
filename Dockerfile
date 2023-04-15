@@ -1,11 +1,7 @@
-# syntax=docker/dockerfile:1
+FROM maven:3.8.4-jdk-11
+WORKDIR /dio-bio
+COPY pom.xml .
+COPY src/ ./src/
+RUN mvn clean install
+ENTRYPOINT ["mvn", "spring-boot:run"]
 
-FROM maven:3.9-amazoncorretto-8-debian-bullseye
-
-WORKDIR .
-
-RUN mvn dependency:resolve
-
-COPY src ./src
-
-CMD ["mvn", "spring-boot:run"]
