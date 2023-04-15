@@ -19,7 +19,7 @@ Neste desafio, você deverá replicar (e porque não, melhorar) este [projeto pr
 # Sobre o Projeto apresentado
 
 O projeto foi criado do zero e não a partir do proposto, é uma api desenvolvida em  spring boot. Essa api é uma aplicação Spring boot atualmente com um front em Thymeleaf, 
-onde é inserido o usuário e senha da plataforma da DIO, e algumas informações pessoais como nome, idade, etc. Essa api utiliza dois microserviços. Um microsserviço que faz webscrapping na pagina da DIO, utilizando o login e senha para obter os certificados daquela conta. Um segundo serviço que pegas esses certificados, as informações iseridas e gera uma bio eviando essas informações para a api do chat-GPT3, junto com um prompt que também foi definido na api.
+onde é inserido o usuário e senha da plataforma da DIO, e algumas informações pessoais como nome, idade, etc. Essa api utiliza dois microserviços. Um [microsserviço](https://github.com/P3d50/certificates) que faz webscrapping na pagina da DIO, utilizando o login e senha para obter os certificados daquela conta. Um segundo [serviço](https://github.com/P3d50/chatgtp) que pegas esses certificados, as informações iseridas e gera uma bio eviando essas informações para a api do chat-GPT3, junto com um prompt que também foi definido na api.
 
 
 # Sobre a execução do projeto
@@ -35,6 +35,16 @@ onde é inserido o usuário e senha da plataforma da DIO, e algumas informaçõe
     ```
     
   - acessar a url do local onde o container está rodando com a porta "8080" e a uri "/home", ex: http://localhost:8080/home
+ 
+
+# Sobre a integração dos microsserviços e alertas
+
+ - [busca os certificados na plataforma da DIO](https://github.com/P3d50/certificates)
+ - [envia as informações para o chat-GPT3 via api](https://github.com/P3d50/chatgtp)
+ 
+ - considerar que esses projetos estão em fase inicial e não foram pensadas questões como privacidade e segurança, existem algumas coisas hardcoded que serão melhoradas posteriormente, utilize com cautela.
+ - as urls dos serviços estão em hardcoded, chaves de api, etc.. considere isso antes de subir esses projetos para alguma núvem pública.
+ 
  
 
 
